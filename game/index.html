@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Lens — Cari Perbedaannya</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <div id="game-title">🔍 TWIN LENS</div>
+      <div id="level-name">Taman Kota Pagi</div>
+    </div>
+    <div class="hud-mid">
+      <div id="remaining" title="Perbedaan yang masih harus ditemukan">
+        <span class="remaining-label">SISA</span>
+        <span id="remaining-count">7</span>
+        <span class="remaining-of" id="remaining-of">/ 7 perbedaan</span>
+      </div>
+      <div id="found-line">Ditemukan <b id="found-count">0</b> · Petunjuk <b id="hint-count">3</b> · Salah <b id="miss-count">0</b></div>
+    </div>
+    <div class="hud-right">
+      <div id="timer-wrap"><div id="timer-bar"></div><span id="timer-text">3:00</span></div>
+      <div id="score-box">SKOR <b id="score">0</b></div>
+      <button id="mute-btn" type="button" title="Suara (M)">♪</button>
+      <button id="pause-btn" type="button" title="Jeda (Esc)">II</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <section class="panel" id="panel-left">
+      <div class="panel-tag">GAMBAR A</div>
+      <canvas id="canvas-left" width="560" height="440" tabindex="0"
+        aria-label="Gambar kiri: taman kota pagi"></canvas>
+    </section>
+    <section class="panel" id="panel-right">
+      <div class="panel-tag">GAMBAR B</div>
+      <canvas id="canvas-right" width="560" height="440" tabindex="0"
+        aria-label="Gambar kanan: hampir sama, ada perbedaan tersembunyi"></canvas>
+    </section>
+    <div id="crosshair-note">Gerakkan kursor dengan mouse atau tombol panah — tekan Enter / Spasi untuk menandai · H = petunjuk</div>
+  </main>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <h1 id="overlay-title">TWIN LENS</h1>
+      <p id="overlay-sub">Cari semua perbedaan di antara dua gambar yang hampir identik.</p>
+      <div id="overlay-body"></div>
+      <div id="overlay-buttons"></div>
+      <p id="overlay-foot">Mouse: klik perbedaan · Keyboard: panah + Enter · H petunjuk · M suara · Esc jeda</p>
+    </div>
+  </div>
+
+  <div id="toast" class="hidden" role="status"></div>
+  <p id="sr-status" class="sr-only" role="status" aria-live="polite"></p>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
